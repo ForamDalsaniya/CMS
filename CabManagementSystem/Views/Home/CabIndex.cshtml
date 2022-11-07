@@ -1,0 +1,18 @@
+﻿@inject SignInManager<ApplicationUser> signInManager;
+@inject UserManager<ApplicationUser> userManager;
+
+@{
+    var userinfo = userManager.FindByNameAsync(User.Identity.Name);
+
+}
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Home Page";
+}
+
+<div class="container">
+    <a class="btn btn-primary" asp-action="CabDriverHome" asp-controller="Home">Register Cab</a>
+    <a class="btn btn-primary" asp-action="RegisteredCabList" asp-controller="home" asp-route-id="@userinfo.Result.Id">View Request</a>
+    @*<a class="btn btn-primary" ></a>*@
+</div>

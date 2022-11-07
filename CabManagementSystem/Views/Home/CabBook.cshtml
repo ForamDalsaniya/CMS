@@ -1,0 +1,17 @@
+﻿@*@inject UserManager<ApplicationUser> userManager;*@
+@inject SignInManager<ApplicationUser> sgnInManager;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Specify Location";
+}
+
+<div class="container my-3">
+    <form asp-controller="Home" asp-action="CabBook" method="post">
+        <h4>In Which Place Do you want Cab??</h4>
+        <input type="text" for="cityName" name="cityName" id="cityName" />
+        <small>Specify city name</small>
+        <input type="text" for="cabAddress" name="cabAddress" placeholder="Address"/>
+        <input value="@User.Identity.Name" hidden name="registerBy" for="registerBy" />
+        <button class="submit" type="submit">Submit</button>
+    </form>
+</div>

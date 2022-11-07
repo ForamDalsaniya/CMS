@@ -1,0 +1,60 @@
+
+@inject UserManager<ApplicationUser> userManager;
+@inject SignInManager<ApplicationUser> sgnInManager;
+@model CabCreateViewModel
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Register Cab";
+}
+
+@{
+    var userinfo = userManager.FindByNameAsync(User.Identity.Name);
+}
+
+<div class="container">
+    <form enctype="multipart/form-data" asp-controller="home" asp-action="CabDriverHome" method="post">
+        <div asp-validation-summary="All" class="text-danger"></div>
+        <input asp-for="DrivarId" hidden value="@userinfo.Result.Id" />
+        <div class="mb-3">
+            <label asp-for="CabModel" class="form-label"></label>
+            <input  class="form-control" asp-for="CabModel" />
+            <span asp-validation-for="CabModel" class="text-danger"></span>
+        </div>
+        <div class="mb-3">
+            <label asp-for="numberPlate" class="form-label"></label>
+            <input class="form-control" asp-for="numberPlate" />
+            <span asp-validation-for="numberPlate" class="text-danger"></span>
+        </div>
+            <div class="mb-3">
+                <label asp-for="City" class="form-label"></label>
+                <input class="form-control" asp-for="City" />
+                <span asp-validation-for="City" class="text-danger"></span>
+            </div>
+        <div class="mb-3">
+            <div class="form-check">
+                <input class="form-check-input" asp-for="AC" type="radio" value="true" />
+                
+                <label class="form-check-label" >
+                    A.C.
+                </label>
+            </div>
+            <div class="form-check">
+                <input class="form-check-input" asp-for="AC" type="radio" value="false">
+                <label class="form-check-label">
+                    Non A.C.
+                </label>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label asp-for="Photo" class="col-form-label"></label>
+            <div class="custom-file">
+                <input class="form-control custom-file-input" asp-for="Photo">
+                @*<label class="custom-file-label">Choose File...</label>*@
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary">Submit</button>
+        <button  class="btn btn-primary" asp-action="CabIndex" asp-controller="Home">Back</button>
+    </form>
+</div>
+
+

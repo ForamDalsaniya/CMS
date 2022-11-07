@@ -1,0 +1,43 @@
+﻿@model IEnumerable<Cab>;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    int count = 0;
+}
+
+<div class="container">
+    <div class="card-group">
+    @foreach(var cab in Model){
+            @if (ViewBag.city == cab.City && cab.isRegister == false)
+            {
+                var photoPath = "~/images/" + (cab.PhotoPath ?? "Barbaadiyan.jpg");
+                count++;
+                <div class="card m-3" style="min-width:18rem; max-width:30.5%;">
+                    <img src="@photoPath" class="card-img-top imageThumbnail" asp-append-version="true">
+                    <div class="card-body">
+                        <h5 class="card-title">@cab.CabModel</h5>
+                        @if(cab.AC){
+                            <p class="card-text">A.C.</p>
+                        }else{
+                            <p class="card-text">NON A.C.</p>
+                        }
+                        <p class="card-text">NumberPlate: @cab.numberPlate</p>
+                    </div>
+                    <div class="card-footer">
+                    @*<form asp-controller="home" asp-action="book" method="post">*@
+                        <a asp-controller="home" asp-action="book" asp-route-id="@cab.CarId" type="submit" class="btn btn-primary m-1">Book</a>
+                   @* </form>*@
+                        <a asp-action="index" asp-controller="home" class="btn btn-primary m-1">Back</a>
+                    @*<a href="#" class="btn btn-danger m-1">Delete</a>*@
+                    </div>
+                </div>  
+                
+            }
+    }
+
+    </div>
+    @if(count == 0){
+        <h1>Sorry, There is no any taxi available in @ViewBag.city</h1>
+    }
+</div>

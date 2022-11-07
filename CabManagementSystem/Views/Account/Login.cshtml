@@ -1,0 +1,76 @@
+﻿@model LoginViewModel
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cab Driver Registration</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800&display=swap" rel="stylesheet">
+    <link href="~/css/registration.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="cont">
+        <div class="form sign-in">
+            <form method="post" asp-action="Login" asp-controller="Account">
+                <h2>Login</h2>
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <label asp-for="UserName">
+                    <span>User Name</span>
+                    <input asp-for="UserName">
+                </label>
+                <label asp-for="Password">
+                    <span>Password</span>
+                    <input asp-for="Password">
+                </label>
+
+                <button class="submit" type="submit">Sign In</button>
+            </form>
+        </div>
+
+
+    </div>
+    @* <script type="text/javascript" src="script.js"></script>*@
+</body>
+</html>
+
+
+
+
+
+@*@model LoginViewModel
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Cab Driver Registration</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800&display=swap" rel="stylesheet">
+    <link href="~/css/registration.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="cont">
+        <div class="form sign-in">
+            <form method="post" asp-action="Login" asp-controller="Account">
+                <h2>Cab Driver Registration</h2>
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <label asp-for="UserName">
+                    <span>User Name</span>
+                    <input asp-for="UserName">
+                </label>
+                <label asp-for="Password">
+                    <span>Password</span>
+                    <input asp-for="Password">
+                </label>
+            
+                <button class="submit" type="submit">Sign In</button>
+            </form>
+        </div>
+
+        
+    </div>
+     <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
+*@

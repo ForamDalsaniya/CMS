@@ -1,0 +1,155 @@
+﻿@model RegisterUserViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "RegisterCabDriverViewModel";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Registration</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800&display=swap" rel="stylesheet">
+    <link href="~/css/registration.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="cont">
+        <div class="form sign-in">
+            <form method="post" asp-action="RegisterUser" asp-controller="Account">
+                <h2>User Registration</h2>
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <label asp-for="UserName">
+                    <span>User Name</span>
+                    <input asp-for="UserName">
+                </label>
+                <label asp-for="Name">
+                    <span>Name</span>
+                    <input asp-for="Name">
+                </label>
+                <label asp-for="Email">
+                    <span>Email Address</span>
+                    <input asp-for="Email">
+                </label>
+                <label asp-for="City">
+                    <span>City</span>
+                    <input asp-for="City">
+                </label>
+                <label asp-for="PhoneNumber">
+                    <span>Phone No</span>
+                    <input asp-for="PhoneNumber">
+                </label>
+                <label asp-for="Password">
+                    <span>Password</span>
+                    <input asp-for="Password">
+                </label>
+                <label asp-for="ConfirmPassword">
+                    <span>Confirm Password</span>
+                    <input asp-for="ConfirmPassword">
+                </label>
+                <button class="submit" type="submit">Sign Up</button>
+
+            </form>
+
+            <div class="d-flex justify-content-center">
+                <a asp-controller="Account" asp-action="Login" class="text-decoration-none text-bg-light">Already User?</a>
+            </div>
+
+        </div>
+
+        <div class="sub-cont">
+            <div class="img">
+                <div class="img-text m-up">
+                    <h2>Cab Driver?</h2>
+                    <p>Sign up as Cab Driver and serve to people</p>
+                    <div style="margin-top:35vh; padding:15px; border:2px solid; border-radius:25px;">
+
+                        <a class="text-decoration-none" style="color:white;" asp-action="RegisterCabDriver" asp-controller="Account">Driver Registration</a>
+                    </div>
+                </div>
+                <div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+    @* <script type="text/javascript" src="script.js"></script>*@
+</body>
+</html>
+
+
+
+
+
+@*@model RegisterUserViewModel
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "RegisterCabDriverViewModel";
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>User Registration</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:400,600,700,800&display=swap" rel="stylesheet">
+    <link href="~/css/registration.css" rel="stylesheet" />
+</head>
+<body>
+    <div class="cont">
+        <div class="form sign-in">
+            <form method="post" asp-action="RegisterUser" asp-controller="Account">
+                <h2>User Registration</h2>
+                <div asp-validation-summary="All" class="text-danger"></div>
+                <label asp-for="UserName">
+                    <span>User Name</span>
+                    <input asp-for="UserName">
+                </label>
+                <label asp-for="Name">
+                    <span>Name</span>
+                    <input asp-for="Name">
+                </label>
+                <label asp-for="Email">
+                    <span>Email Address</span>
+                    <input asp-for="Email">
+                </label>
+                <label asp-for="City">
+                    <span>City</span>
+                    <input asp-for="City">
+                </label>
+                <label asp-for="PhoneNumber">
+                    <span>Phone No</span>
+                    <input asp-for="PhoneNumber">
+                </label>
+                <label asp-for="Password">
+                    <span>Password</span>
+                    <input asp-for="Password">
+                </label>
+                <label asp-for="ConfirmPassword">
+                    <span>Confirm Password</span>
+                    <input asp-for="ConfirmPassword">
+                </label>
+                <button class="submit" type="submit">Sign Up</button>
+            </form>
+        </div>
+
+        <div class="sub-cont" style="width:1000px">
+            <div class="img">
+                <div class="img-text m-up">
+                    <h2>Cab Driver?</h2>
+                    <p>Sign up as Cab Driver and serve to people</p>
+                </div>
+
+                <div class="img-btn" style="width:auto">
+                    <a class="m-up" asp-action="RegisterCabDriver" asp-controller="Account">Driver Registration</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    @* <script type="text/javascript" src="script.js"></script>
+</body>
+</html>
+*@
